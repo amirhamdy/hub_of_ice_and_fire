@@ -1,0 +1,9 @@
+{
+  "dbConfig": {
+    "name": "dlc_task_db_production",
+    "username": "root",
+    "password": "",
+    "host": "localhost"
+  },
+  "port": "7000"
+}
