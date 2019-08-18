@@ -1,6 +1,6 @@
 {
   "dbConfig": {
-    "name": "dlc_task_db_production",
+    "name": "task_production",
     "username": "root",
     "password": "",
     "host": "localhost"

@@ -3,12 +3,14 @@ const crypto = require('crypto');
 const bcrypt = require("bcrypt");
 const _ = require("lodash");
 var emailvalidator = require("email-validator");
-const { User, validate } = require("../models/user");
 const { Token } = require('../models/token');
 */
 
+const models = require("../models/index");
+const { validate } = require("../validations/user");
+
 exports.profile = function(req, res) {
-    res.send("get - user profile is here!");
+  res.send("get - user profile is here!");
 };
 
 /*
@@ -16,44 +18,22 @@ exports.profile = function(req, res) {
     to verify that it's a valid email and that he/she is the owner of this email.
 */
 exports.register = async function(req, res) {
-/*
-    const error = validate(req.body);
-    if (error) return res.status(400).send(error);
+  const { error } = validate(req.body);
+  if (error) return res.status(400).send(error);
 
-    let user = await User.findOne({ email: req.body.email });
-    if (user) return res.status(400).send("Email already registered.");
+  let user = await models.User.findOne({ where: { email: req.body.email } });
+  if (user) return res.status(400).send("Email already registered.");
 
-    user = await User.findOne({ phone: req.body.phone });
-    if (user) return res.status(400).send("Phone Number already registered.");
+  let user = await models.User.findOne({ where: { username: req.body.username } });
+  if (user) return res.status(400).send("Username already used.");
 
-    user = new User(
-        _.pick(req.body, [
-            "name",
-            "email",
-            "password",
-            "phone",
-            "gender",
-            "dob"
-        ])
-    );
-    const salt = await bcrypt.genSalt(10);
-    user.password = await bcrypt.hash(user.password, salt);
-    await user.save();
+  user = new models.User(
+    _.pick(req.body, ["firstName", "lastName", "username", "email"])
+  );
 
-    const token = new Token({ _userId: user._id, token: crypto.randomBytes(16).toString('hex') })
+  const salt = await bcrypt.genSalt(10);
+  user.password = await bcrypt.hash(user.password, salt);
+  await user.save();
 
-    await token.save();
-
-    // send the confirmation email:
-    const to = req.body.email;
-    const subject = 'Account Verification';
-    const body = 'Hello,\n\n' + 'Please verify your account by clicking the link: \nhttp:\/\/' +
-        req.headers.host + '\/api\/users' +'\/confirmation\/'+ user.email + '\/' + token.token + '.\n';
-
-    await sendmail(to, subject, body);
-
-    res.send(_.pick(user, ["_id", "name", "email", "phone"]));
-*/
-
-    res.send('register');
+  res.send(_.pick(user, ["_id", "username", "email"]));
 };
