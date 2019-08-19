@@ -1,9 +1,5 @@
 {
   "dbConfig": {
-    "name": "dlc_task_db_test",
-    "username": "root",
-    "password": "",
-    "host": "localhost"
-  },
-  "port": "5000"
+    "name": "task_testing"
+  }
 }

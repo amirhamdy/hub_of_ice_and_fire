@@ -4,12 +4,14 @@
   "description": "A Hub of Ice and Fire where people can talk about GOT and post their theories and ideas.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all && node index.js",
+    "db:migrate": "sequelize db:drop && sequelize db:create && sequelize db:migrate:undo:all && sequelize db:migrate",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Amir Hamdy",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.0",
     "bcrypt": "^3.0.6",
     "config": "^1.29.4",
     "express": "^4.16.2",
@@ -17,7 +19,9 @@
     "joi": "^14.3.1",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
+    "mention-hashtag": "^1.1.1",
     "mysql2": "^1.6.5",
+    "nodemailer": "^6.3.0",
     "sequelize": "^5.15.0"
   },
   "devDependencies": {

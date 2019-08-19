@@ -1,9 +1,17 @@
 {
   "dbConfig": {
     "name": "task_development",
-    "username": "root",
+    "username": "amir",
     "password": "",
     "host": "localhost"
   },
+  "mail": {
+    "service": "Gmail",
+    "auth": {
+      "user": "task_test101@gmail.com"
+    }
+  },
+  "apiEndPoint": "https://anapioficeandfire.com/api/characters/583",
+  "jwtPrivateKey": "",
   "port": "3000"
 }

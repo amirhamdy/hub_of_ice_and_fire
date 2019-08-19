@@ -1,9 +1,5 @@
 {
   "dbConfig": {
-    "name": "task_production",
-    "username": "root",
-    "password": "",
-    "host": "localhost"
-  },
-  "port": "7000"
+    "name": "task_production"
+  }
 }

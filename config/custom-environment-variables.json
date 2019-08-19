@@ -1,2 +1,11 @@
 {
+  "dbConfig": {
+    "password": "MYSQL_PASS"
+  },
+  "jwtPrivateKey": "APP_jwtPrivateKey",
+  "mail": {
+    "auth": {
+      "pass": "APP_mailPassword"
+    }
+  }
 }
