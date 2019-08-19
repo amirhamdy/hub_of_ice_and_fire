@@ -39,6 +39,7 @@ Home directory will view a general information about the GOT series from **https
 Open up your browser and head over to:
 
 ```
+* Make sure to use valid email address and password in config/default.json to send notification email if was mentioned
 * http://localhost:3000/users/register
 {
 	"firstName":"Ahmed",
