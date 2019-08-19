@@ -6,7 +6,7 @@
   "scripts": {
     "start": "sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all && node index.js",
     "db:migrate": "sequelize db:drop && sequelize db:create && sequelize db:migrate:undo:all && sequelize db:migrate",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watchAll --verbose"
   },
   "author": "Amir Hamdy",
   "license": "ISC",
@@ -16,6 +16,7 @@
     "config": "^1.29.4",
     "express": "^4.16.2",
     "express-async-errors": "^2.1.0",
+    "jest": "^24.9.0",
     "joi": "^14.3.1",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
@@ -25,6 +26,7 @@
     "sequelize": "^5.15.0"
   },
   "devDependencies": {
-    "sequelize-cli": "^5.5.0"
+    "sequelize-cli": "^5.5.0",
+    "supertest": "^4.0.2"
   }
 }

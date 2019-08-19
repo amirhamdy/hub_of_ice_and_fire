@@ -1,4 +1,5 @@
 {
+  "jwtPrivateKey": "123456",
   "dbConfig": {
     "name": "task_testing"
   }

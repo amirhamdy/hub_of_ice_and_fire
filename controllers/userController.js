@@ -4,6 +4,10 @@ const {User} = require("../models");
 const {generateAuthToken} = require('../misc/generateToken')
 const {validate} = require("../validations/user");
 
+exports.index = async function (req, res) {
+    res.send('All users - just for testing!');
+};
+
 // This function views user profile.
 exports.profile = async function (req, res) {
     const username = req.params.username;
