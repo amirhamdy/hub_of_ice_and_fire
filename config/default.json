@@ -11,7 +11,7 @@
       "user": "task_test101@gmail.com"
     }
   },
-  "apiEndPoint": "https://anapioficeandfire.com/api/characters/583",
+  "apiEndPoint": "https://anapioficeandfire.com/api/characters/",
   "jwtPrivateKey": "",
   "port": "3000"
 }
