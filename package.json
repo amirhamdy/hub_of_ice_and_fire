@@ -11,7 +11,7 @@
   "author": "Amir Hamdy",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "bcrypt": "^3.0.6",
     "config": "^1.29.4",
     "express": "^4.16.2",
